@@ -59,7 +59,9 @@ conda create --name vid2e python=3.9
 conda activate vid2e
 pip install -r rpg_vid2e/requirements.txt
 conda install -y -c conda-forge pybind11 matplotlib
-conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+conda install -c conda-forge opencv
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c 
+sudo apt-get install libboost-all-dev
 ```
 
 Build the python bindings for ESIM
@@ -69,6 +71,7 @@ pip install rpg_vid2e/esim_py/
 ```
 
 Build the python bindings with GPU support with 
+
 
 ```bash
 pip install rpg_vid2e/esim_torch/
