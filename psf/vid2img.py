@@ -28,7 +28,7 @@ while True:
     # Get the current frame's timestamp in seconds
     current_timestamp = cap.get(cv2.CAP_PROP_POS_MSEC)/1000.0
     timestamps.append(current_timestamp)
-    cv2.imwrite("images/images/frame%d.jpg" % cnt, frame)
+    cv2.imwrite("data/images/images/frame%d.jpg" % cnt, frame)
     if (cnt==200):
         break
     # Display the frame if needed
@@ -41,7 +41,8 @@ while True:
 # Release the video capture object and close windows
 cap.release()
 # cv2.destroyAllWindows()
-timestamps_file = "images/timestamps.txt"
+#%%
+timestamps_file = "data/images/timestamps.txt"
 
 with open(timestamps_file, "w") as file:
     for timestamp in timestamps:
